@@ -23,9 +23,6 @@ public class StudentManagement {
         return students;
     }
 
-    protected void setStudents(List<Student> students) {
-        this.students = students;
-    }
 
     protected Student editStudent(int index, Student student) {
        return students.set(index, student);

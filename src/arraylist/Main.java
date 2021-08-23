@@ -153,11 +153,12 @@ public class Main {
     private static int findIndex(StudentManagement studentManagement, int low, int high, String id) {
         int mid = (low + high) / 2;
         if (high >= low) {
-            if (studentManagement.getStudents().get(mid).getId().compareTo(id) == 0) {
+            int getId = studentManagement.getStudents().get(mid).getId().compareTo(id);
+            if (getId == 0) {
                 return mid;
-            } else if (studentManagement.getStudents().get(mid).getId().compareTo(id) > 0) {
+            } else if (getId > 0) {
                 return findIndex(studentManagement, low, mid - 1, id);
-            } else if (studentManagement.getStudents().get(mid).getId().compareTo(id) < 0) {
+            } else {
                 return findIndex(studentManagement, mid + 1, high, id);
             }
         }
